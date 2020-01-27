@@ -9,12 +9,12 @@ const Nav = () => {
   const history = useHistory();
   const [IsOpen, ToggleSubMenu] = useState(false)
   const [media, setMedia] = useState('Movies')
-  let [user = {name: '', password: ''}, setUser] = useLocalStorage('user')
+  let [user, setUser] = useLocalStorage('user', {name: '', password: ''})
   const userState = useSelector(state => state.logUser)
   const dispatch = useDispatch()
-
+  
   useEffect(() => {
-    if(user.name && user.name.length)
+    if(user.name.length)
       dispatch(login({name: user.name, password: user.password}))
   }, [])
   return (
@@ -22,7 +22,7 @@ const Nav = () => {
       <li onClick={() => {
         if(userState.isLogged) {
           dispatch(logout())
-          setUser(null)
+          setUser({name: '', password: ''})
         } else {
           history.push("/login")
         }
