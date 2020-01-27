@@ -11272,7 +11272,24 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"react-router@npm:^5.1.2":
+"react-router-dom@npm:^5.1.2":
+  version: 5.1.2
+  resolution: "react-router-dom@npm:5.1.2"
+  dependencies:
+    "@babel/runtime": ^7.1.2
+    history: ^4.9.0
+    loose-envify: ^1.3.1
+    prop-types: ^15.6.2
+    react-router: 5.1.2
+    tiny-invariant: ^1.0.2
+    tiny-warning: ^1.0.0
+  peerDependencies:
+    react: ">=15"
+  checksum: 88239aeeadfc9e2e7ae15d11aa6691cc010c8d7d2185720d6636655810922e122aca1a967b60fd6df90e0ec484aac98bf4c3b2d3c3a9e09bb313a19616893a68
+  languageName: node
+  linkType: hard
+
+"react-router@npm:5.1.2":
   version: 5.1.2
   resolution: "react-router@npm:5.1.2"
   dependencies:
@@ -13704,7 +13721,7 @@ resolve@1.12.2:
     react: ^16.12.0
     react-dom: ^16.12.0
     react-redux: ^7.1.3
-    react-router: ^5.1.2
+    react-router-dom: ^5.1.2
     react-scripts: 3.3.0
     redux: ^4.0.5
     styled-components: ^5.0.0
