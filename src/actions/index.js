@@ -1,3 +1,4 @@
+// USER LOGIN ACTIONS && ACTION CREATORS
 export const LOGIN = 'LOGIN'
 
 export const login = ({ name, password }) => {
@@ -37,6 +38,8 @@ export const logout = () => {
   }
 }
 
+// GENRE ACTIONS && ACTION CREATORS
+
 export const CHANGE_GENRE = 'CHANGE_GENRE'
 
 export const change_genre = ({ id, name }) => {
@@ -56,3 +59,4 @@ export const get_genre = () => {
     type: GET_GENRE
   }
 }
+
