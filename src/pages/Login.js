@@ -2,8 +2,11 @@ import React, { useRef, useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { login } from '../actions'
+import { useLocalStorage } from '../hooks/useLocalStorage'
+
 
 const Login = () => {
+  const [value, setValue] = useLocalStorage('user', '')
   const [error, setError] = useState("");
   const userRef = useRef(null);
   const passRef = useRef(null);
@@ -21,6 +24,7 @@ const Login = () => {
       setError("Password is too short")
     else {
       dispatch(login({name: username, password: password}))
+      setValue({name: username, password: password})
       setError("");
       history.push("/")
     }

@@ -1,5 +1,7 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
+import { useLocalStorage } from './hooks/useLocalStorage'
 import Nav from './components/Nav';
 import Main from './pages/Main.js'
 import Login from './pages/Login.js'
@@ -9,6 +11,11 @@ import './App.css'
 
 
 function App() {
+  
+  useEffect(() => {
+
+  })
+
   return (
     <Router>
       <Nav />
