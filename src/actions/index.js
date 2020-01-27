@@ -2,6 +2,7 @@
 export const LOGIN = 'LOGIN'
 
 export const login = ({ name, password }) => {
+  console.log(`name: ${name} password: ${password}`)
   return {
     type: LOGIN,
     payload: {
