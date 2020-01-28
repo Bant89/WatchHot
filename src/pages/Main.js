@@ -1,8 +1,12 @@
 import React from 'react'
+import GetMainContent from '../containers/GetMainContent'
 
 const Main = () => {
   return (
-    <h1>Main Page</h1>
+    <div>
+      <h1>Main Page</h1>
+     <GetMainContent />
+    </div>
   )
 }
 

@@ -2,7 +2,6 @@
 export const LOGIN = 'LOGIN'
 
 export const login = ({ name, password }) => {
-  console.log(`name: ${name} password: ${password}`)
   return {
     type: LOGIN,
     payload: {
@@ -60,4 +59,38 @@ export const get_genre = () => {
     type: GET_GENRE
   }
 }
+
+// DATA REQUESTS ACTIONS && ACTIONS CREATORS
+
+export const FETCH_DATA_REQUEST = 'FETCH_DATA_REQUEST'
+
+export const get_data = (genre) => {
+  return {
+    type: FETCH_DATA_REQUEST,
+    payload: {
+      genre
+    }
+  }
+}
+
+export const FETCH_DATA_ERROR = 'FETCH_DATA_ERROR'
+
+export const data_error = (error) => {
+  return {
+    type: FETCH_DATA_ERROR,
+    error
+  }
+}
+
+export const FETCH_DATA_SUCCESS = 'FETCH_DATA_SUCCESS'
+
+export const data_success = (results) => {
+  return {
+    type: FETCH_DATA_SUCCESS,
+    payload: {
+      results
+    }
+  }
+}
+
 
