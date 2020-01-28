@@ -64,12 +64,9 @@ export const get_genre = () => {
 
 export const FETCH_DATA_REQUEST = 'FETCH_DATA_REQUEST'
 
-export const get_data = (genre) => {
+export const get_data = () => {
   return {
-    type: FETCH_DATA_REQUEST,
-    payload: {
-      genre
-    }
+    type: FETCH_DATA_REQUEST
   }
 }
 
@@ -92,5 +89,3 @@ export const data_success = (results) => {
     }
   }
 }
-
-

@@ -1,3 +1,6 @@
+export const APIKEY = 'f3a068bc2304691671665a006a0c51aa'
+export const BASE_URL = 'https://api.themoviedb.org/3'
+
 export const genres = [
   {
     id: 28,

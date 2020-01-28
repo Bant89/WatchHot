@@ -3,8 +3,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import axios from 'axios'
 import { get_data, data_error, data_success } from '../actions'
 import { MovieList } from '../components/MovieList'
-
-const APIKey = 'f3a068bc2304691671665a006a0c51aa', BASE_URL = 'https://api.themoviedb.org/3', ENDPOINT = '/discover/movie'
+import { APIKEY, BASE_URL } from '../api/info'
+const ENDPOINT = '/discover/movie'
 
 const GetMainContent = () => {
   const currentGenre = useSelector(state => state.genre)
@@ -12,13 +12,12 @@ const GetMainContent = () => {
   let { isLoading, results } = useSelector(state => state.mainData)
 
   useEffect(() => {
-    dispatch(get_data(currentGenre))
-    console.log('entro aqui')
+    dispatch(get_data())
       axios({
         method: 'get',
         url: `${BASE_URL + ENDPOINT}`,
         params: {
-          api_key: APIKey,
+          api_key: APIKEY,
           language: 'en-US',
           sort_by: 'popularity_desc',
           include_adult: false,
@@ -28,7 +27,6 @@ const GetMainContent = () => {
         }
       })
       .then(res => {
-        console.log ('DESDE MAIN CONTENT GENRE ES', currentGenre)
         dispatch(data_success(res.data.results.filter(e => e)))
       })
       .catch(err => dispatch(data_error(err)))

@@ -8,7 +8,7 @@ const SubNav = () => {
   return (
     <ul>
       <li onClick={() => {
-        dispatch(change_genre({id: 5, name: 'Action'}))
+        dispatch(change_genre({id: 28, name: 'Action'}))
         dispatch(get_data(genre))
       }}>Action</li>
       <li onClick={() => {
