@@ -5,6 +5,7 @@ const movieDetailReducer =
   state = {
     error: '',
     isLoading: false,
+    videos: [],
     result: {}
   },
   action
@@ -24,7 +25,8 @@ const movieDetailReducer =
       return {
         ...state,
         isLoading: false,
-        result: action.payload.result
+        result: action.payload.result,
+        videos: action.payload.videos
       }
     default:
       return state

@@ -111,11 +111,12 @@ export const detail_data_error = (error) => {
 
 export const DETAIL_DATA_SUCCESS = 'DETAIL_DATA_SUCCESS'
 
-export const detail_data_success = (result) => {
+export const detail_data_success = (result, videos) => {
   return {
     type: DETAIL_DATA_SUCCESS,
     payload: {
-      result
+      result,
+      videos
     }
   }
 }

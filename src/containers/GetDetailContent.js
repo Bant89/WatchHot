@@ -10,19 +10,34 @@ import { MovieInfo } from '../components/MovieInfo'
 export const GetDetailContent = () => {
   let dispatch = useDispatch()
   let { id } = useParams()
-  let SIMILAR_ENDPOINT = `/movie/${id}/similar`,DETAIL_ENDPOINT = `/movie/${id}`
+  let SIMILAR_ENDPOINT = `/movie/${id}/similar`,
+      DETAIL_ENDPOINT = `/movie/${id}`,
+      VIDEO_ENDPOINT = `/movie/${id}/videos`
   useEffect(() => {
     // Call for the details
     dispatch(get_detail_data())
-    axios({
+    axios
+    .all([
+      axios({
       method: 'get',
       url: `${BASE_URL + DETAIL_ENDPOINT}`,
       params: {
         api_key: APIKEY,
         language: 'en-US'
       }
+    }),axios({
+      method: 'get',
+      url: `${BASE_URL + VIDEO_ENDPOINT}`,
+      params: {
+        api_key: APIKEY,
+        language: 'en-US'
+      }
     })
-    .then(res => dispatch(detail_data_success(res.data)))
+  ])
+    .then(axios.spread((details, videos) => {
+      console.log(videos)
+      dispatch(detail_data_success(details.data, videos.data.results))
+    }))
     .catch(err => {
       console.log(err)
       dispatch(detail_data_error())
