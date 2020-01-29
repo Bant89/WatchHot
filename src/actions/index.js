@@ -60,7 +60,7 @@ export const get_genre = () => {
   }
 }
 
-// DATA REQUESTS ACTIONS && ACTIONS CREATORS
+// MAIN CONTENT DATA REQUESTS ACTIONS && ACTIONS CREATORS
 
 export const FETCH_DATA_REQUEST = 'FETCH_DATA_REQUEST'
 
@@ -84,6 +84,66 @@ export const FETCH_DATA_SUCCESS = 'FETCH_DATA_SUCCESS'
 export const data_success = (results) => {
   return {
     type: FETCH_DATA_SUCCESS,
+    payload: {
+      results
+    }
+  }
+}
+
+// DETAIL CONTENT DATA REQUESTS ACTIONS && ACTIONS CREATORS
+
+export const DETAIL_DATA_REQUEST = 'DETAIL_DATA_REQUEST'
+
+export const get_detail_data = () => {
+  return {
+    type: DETAIL_DATA_REQUEST
+  }
+}
+
+export const DETAIL_DATA_ERROR = 'DETAIL_DATA_ERROR'
+
+export const detail_data_error = (error) => {
+  return {
+    type: DETAIL_DATA_ERROR,
+    error
+  }
+}
+
+export const DETAIL_DATA_SUCCESS = 'DETAIL_DATA_SUCCESS'
+
+export const detail_data_success = (results) => {
+  return {
+    type: DETAIL_DATA_SUCCESS,
+    payload: {
+      results
+    }
+  }
+}
+
+// SIMILAR CONTENT DATA REQUESTS ACTIONS && ACTIONS CREATORS
+
+export const SIMILAR_DATA_REQUEST = 'SIMILAR_DATA_REQUEST'
+
+export const get_similar_data = () => {
+  return {
+    type: SIMILAR_DATA_REQUEST
+  }
+}
+
+export const SIMILAR_DATA_ERROR = 'SIMILAR_DATA_ERROR'
+
+export const similar_data_error = (error) => {
+  return {
+    type: SIMILAR_DATA_ERROR,
+    error
+  }
+}
+
+export const SIMILAR_DATA_SUCCESS = 'SIMILAR_DATA_SUCCESS'
+
+export const similar_data_success = (results) => {
+  return {
+    type: SIMILAR_DATA_SUCCESS,
     payload: {
       results
     }
