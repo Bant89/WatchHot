@@ -31,7 +31,7 @@ const GetMainContent = () => {
       })
       .catch(err => dispatch(data_error(err)))
     
-  }, [currentGenre])
+  }, [currentGenre, dispatch])
 
   if(isLoading)
     return <h1>Loading</h1>

@@ -5,7 +5,7 @@ const similarMoviesReducer =
   state = {
     error: '',
     isLoading: false,
-    result: {}
+    results: []
   },
   action
 ) => {

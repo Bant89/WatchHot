@@ -16,7 +16,7 @@ const Nav = () => {
   useEffect(() => {
     if(user.name.length)
       dispatch(login({name: user.name, password: user.password}))
-  }, [])
+  }, [user.name, user.password, dispatch])
   return (
     <ul>
       <li onClick={() => {

@@ -39,7 +39,7 @@ export const SearchBar = () => {
         })
         .catch(err => dispatch(data_error(err)))
     }
-  }, [debouncedSearchTerm])
+  }, [debouncedSearchTerm, dispatch])
 
   return (
     <div>
