@@ -60,7 +60,7 @@ export const GetDetailContent = () => {
       dispatch(similar_data_error())
     })
 
-  }, [])
+  }, [SIMILAR_ENDPOINT, DETAIL_ENDPOINT, VIDEO_ENDPOINT, dispatch])
 
   return <MovieInfo />
 }

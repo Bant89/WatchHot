@@ -1,13 +1,9 @@
 // USER LOGIN ACTIONS && ACTION CREATORS
-export const LOGIN = 'LOGIN'
+export const LOGIN_REQUEST = 'LOGIN'
 
-export const login = ({ name, password }) => {
+export const login = () => {
   return {
-    type: LOGIN,
-    payload: {
-      name,
-      password
-    }
+    type: LOGIN_REQUEST
   }
 }
 
@@ -15,18 +11,16 @@ export const SUCCESS_LOGIN = 'SUCCESS_LOGIN'
 
 export const success_login = () => {
   return {
-    type: SUCCESS_LOGIN,
-    status: 'success'
+    type: SUCCESS_LOGIN
   }
 }
 
 export const FAILED_LOGIN = 'FAILED_LOGIN'
 
-export const failed_login = () => {
+export const failed_login = (error) => {
   return {
     type: FAILED_LOGIN,
-    status: 'error',
-    error: 'error'
+    error
   }
 }
 

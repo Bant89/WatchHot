@@ -1,13 +1,18 @@
-import { LOGIN, SUCCESS_LOGIN, FAILED_LOGIN, LOGOUT } from '../actions/index'
+import { LOGIN_REQUEST, SUCCESS_LOGIN, FAILED_LOGIN, LOGOUT } from '../actions/index'
 
-
-const logInReducer = (state = { isLogged: false, name: '', password: '' }, action) => {
+const logInReducer = (state = { 
+  isLogged: false, 
+  request_token: '',
+  account_id: '',
+  username: '',
+  session_id: '',
+  loading: false
+}, action) => {
   switch(action.type){
-    case LOGIN:
+    case LOGIN_REQUEST:
       return {
-        isLogged: true,
-        name: action.payload.name,
-        password: action.payload.password
+        ...state,
+        loading: true
       }
     case SUCCESS_LOGIN:
       return {
