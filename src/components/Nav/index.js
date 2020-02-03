@@ -1,36 +1,20 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { login, logout } from '../../actions'
-import { useHistory } from 'react-router-dom'
-import { useLocalStorage } from '../../hooks/useLocalStorage'
-import SubNav from '../SubNav'
+import { change_genre, get_data } from '../../actions'
+import { genres } from '../../api/info'
 
 const Nav = () => {
-  const history = useHistory();
-  const [IsOpen, ToggleSubMenu] = useState(false)
-  const [media, setMedia] = useState('Movies')
-  let [user, setUser] = useLocalStorage('user', {name: '', password: ''})
-  const userState = useSelector(state => state.logUser)
-  const dispatch = useDispatch()
-  
-  useEffect(() => {
-    if(user.name.length)
-      dispatch(login({name: user.name, password: user.password}))
-  }, [user.name, user.password, dispatch])
+  const genre = useSelector(state => state.genre)
+  const dispatch = useDispatch();
   return (
     <ul>
-      <li onClick={() => {
-        if(userState.isLogged) {
-          dispatch(logout())
-          setUser({name: '', password: ''})
-        } else {
-          history.push("/login")
-        }
-      }}>{ userState.isLogged ? 'Sign Out' : 'Sign In' }</li>
-      <li>{media} <button onClick={() => setMedia(media === 'Movies' ? 'TV Shows' : 'Movies')}>Toggle</button></li>
-      <li>Lists</li>
-      <li onClick={() => ToggleSubMenu(!IsOpen)}>Genres</li>
-      {IsOpen ? <SubNav /> : ''}
+      <li>Watch Hot</li>
+      {genres.map(gen => {
+        return <li key={gen.id} onClick={() => {
+          dispatch(change_genre({id: gen.id, name: gen.name}))
+          dispatch(get_data(gen))
+        }}>{gen.name}</li>
+      })}
     </ul>
   )
 }

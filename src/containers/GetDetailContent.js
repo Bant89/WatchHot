@@ -35,7 +35,6 @@ export const GetDetailContent = () => {
     })
   ])
     .then(axios.spread((details, videos) => {
-      console.log(videos)
       dispatch(detail_data_success(details.data, videos.data.results))
     }))
     .catch(err => {
@@ -60,7 +59,7 @@ export const GetDetailContent = () => {
       dispatch(similar_data_error())
     })
 
-  }, [])
+  }, [VIDEO_ENDPOINT, DETAIL_ENDPOINT, SIMILAR_ENDPOINT, dispatch])
 
   return <MovieInfo />
 }
