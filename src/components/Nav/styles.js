@@ -17,6 +17,7 @@ export const NavBar = styled.ul`
   margin: 0;
   left: 0;
   z-index: 10;
+  display: none;
 `;
 
 export const NavItem = styled.li`

@@ -1,24 +1,15 @@
 import React from 'react'
 import { MovieItem } from '../MovieItem'
-import { Spin, List } from 'antd'
+import { List } from './styles'
 export const MovieList = ({ loading = true, items = [] }) => {
   
   if(loading) {
-    return <Spin tip="Loading"></Spin>
+    return <h2>Loading...</h2>
   }else {
     return (
-      <List
-      grid={{
-        gutter: 16,
-        xs: 1,
-        sm: 2,
-        md: 4,
-        lg: 4,
-        xl: 6,
-        xxl: 3,
-      }}>
+      <List>
         {items.map(e => {
-          return <List.Item key={e.id}><MovieItem movie={e} /></List.Item>
+          return <MovieItem movie={e} key={e.id} />
         })}
       </List>
     )
