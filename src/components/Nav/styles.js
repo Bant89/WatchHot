@@ -10,14 +10,13 @@ export const NavBar = styled.ul`
   list-style: none;
   font-size: 1.3em;
   padding: 0;
-  width: 70vw;
-  position: absolute;
+  width: 15vw;
+  // position: absolute;
   background-color: white;
   top: 0;
   margin: 0;
   left: 0;
   z-index: 10;
-  display: none;
 `;
 
 export const NavItem = styled.li`

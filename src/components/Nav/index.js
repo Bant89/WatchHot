@@ -1,5 +1,6 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
+import { SearchBar } from '../SearchBar'
 import { change_genre, get_data } from '../../actions'
 import { genres } from '../../api/info'
 import { NavBar, NavItem, TopDiv } from './styles'
@@ -14,6 +15,9 @@ const Nav = () => {
           Watch Hot 
           <ion-icon name="close"></ion-icon>
         </TopDiv>
+      </NavItem>
+      <NavItem>
+        <SearchBar />
       </NavItem>
       {genres.map(gen => {
         return <NavItem key={gen.id} onClick={() => {

@@ -6,7 +6,7 @@ import placeholder from '../../assets/placeholder.jpg'
 export const MovieItem = ({movie}) => {
   let url = `/movie/${movie.id}`
   // console.log(movie)
-  let imgUrl = !movie.poster_path ? placeholder : `https://image.tmdb.org/t/p/w200/${movie.poster_path}`
+  let imgUrl = !movie.poster_path ? placeholder : `https://image.tmdb.org/t/p/w300/${movie.poster_path}`
 
   return (
     <Item>
