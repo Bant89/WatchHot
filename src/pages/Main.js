@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux'
 const Main = () => {
   let { name } = useSelector(state => state.genre)
   return (
-    <div style={{textAlign: 'center'}}>
+    <div style={{textAlign: 'center', width: '100%'}}>
       <h1>{name}</h1>
      <GetMainContent />
     </div>
