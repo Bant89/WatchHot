@@ -42,12 +42,13 @@ export const logout = () => {
 
 export const CHANGE_GENRE = 'CHANGE_GENRE'
 
-export const change_genre = ({ id, name }) => {
+export const change_genre = ({ id, name, isGenre }) => {
   return {
     type: CHANGE_GENRE,
     payload: {
       id,
-      name
+      name,
+      isGenre
     }
   }
 }

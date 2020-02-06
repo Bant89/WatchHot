@@ -10,8 +10,8 @@ const Nav = () => {
   const dispatch = useDispatch();
   let gens = genres.map(gen => {
     return <NavItem key={gen.id} onClick={() => {
-      dispatch(change_genre({id: gen.id, name: gen.name}))
-      dispatch(get_data(gen))
+      dispatch(change_genre({id: gen.id, name: gen.name, isGenre: true}))
+      dispatch(get_data())
     }}>{gen.name}</NavItem>
   })
   return (
@@ -20,9 +20,27 @@ const Nav = () => {
         <TopDiv>
           Watch Hot 
         </TopDiv>
-      </NavItem>
       <NavItem>
         <SearchBar />
+      </NavItem>
+      </NavItem>
+      <NavItem onClick={() => {
+      dispatch(change_genre({id: 123, name: 'popular', isGenre: false}))
+      dispatch(get_data())
+    }}>
+        Popular
+      </NavItem>
+      <NavItem onClick={() => {
+      dispatch(change_genre({id: 123, name: 'top_rated', isGenre: false}))
+      dispatch(get_data())
+    }}>
+        Top Rated
+      </NavItem>
+      <NavItem onClick={() => {
+      dispatch(change_genre({id: 123, name: 'upcoming', isGenre: false}))
+      dispatch(get_data())
+    }}>
+        Upcoming
       </NavItem>
       {gens}
     </NavBar>
