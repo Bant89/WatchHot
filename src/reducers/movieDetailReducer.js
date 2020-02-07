@@ -14,16 +14,19 @@ const movieDetailReducer =
     case DETAIL_DATA_REQUEST: 
       return {
         ...state,
+        error: '',
         isLoading: true
       }
     case DETAIL_DATA_ERROR:
       return {
         ...state,
+        isLoading: false,
         error: action.error
       }
     case DETAIL_DATA_SUCCESS:
       return {
         ...state,
+        error: '',
         isLoading: false,
         result: action.payload.result,
         videos: action.payload.videos
