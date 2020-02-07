@@ -10,8 +10,10 @@ export const MovieItem = ({movie}) => {
 
   return (
     <Item>
-      <Image alt="example" src={imgUrl} />
-      <Link to={url} style={{textDecoration: 'none', color: '#333'}}>{movie.original_title}</Link>
+      <Link to={url} style={{textDecoration: 'none', color: '#333'}}>
+        <Image alt="example" src={imgUrl} />
+        <br />{movie.original_title}
+      </Link>
     </Item>
   )
 }

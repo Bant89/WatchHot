@@ -1,12 +1,11 @@
-import React, { useState } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
+import React from 'react'
+import { useDispatch } from 'react-redux'
 import { SearchBar } from '../SearchBar'
 import { change_genre, get_data } from '../../actions'
 import { genres } from '../../api/info'
 import { NavBar, NavItem, TopDiv } from './styles'
 
 const Nav = () => {
-  const genre = useSelector(state => state.genre)
   const dispatch = useDispatch();
   let gens = genres.map(gen => {
     return <NavItem key={gen.id} onClick={() => {
@@ -20,9 +19,9 @@ const Nav = () => {
         <TopDiv>
           Watch Hot 
         </TopDiv>
+      </NavItem>
       <NavItem>
         <SearchBar />
-      </NavItem>
       </NavItem>
       <NavItem onClick={() => {
       dispatch(change_genre({id: 123, name: 'popular', isGenre: false}))
