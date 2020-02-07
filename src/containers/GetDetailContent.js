@@ -11,6 +11,7 @@ export const GetDetailContent = () => {
   let dispatch = useDispatch()
   let data = useSelector(state => state.movieDetail.result)
   let { isLoading, error } = useSelector(state => state.movieDetail)
+  let { videos } = useSelector(state => state.movieDetail)
   let { id } = useParams()
   let SIMILAR_ENDPOINT = `/movie/${id}/similar`,
       DETAIL_ENDPOINT = `/movie/${id}`,
@@ -65,7 +66,7 @@ export const GetDetailContent = () => {
 
   }, [VIDEO_ENDPOINT, DETAIL_ENDPOINT, SIMILAR_ENDPOINT, dispatch])
 
-  return <MovieInfo data={data} loading={isLoading} error={error}/>
+  return <MovieInfo data={data} loading={isLoading} error={error} videos={videos}/>
 }
 
 
