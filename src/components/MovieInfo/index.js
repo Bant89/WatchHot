@@ -30,7 +30,7 @@ export const MovieInfo = props => {
     overview,
     original_title: title,
     runtime,
-    release_date: opening
+    release_date: opening 
   } = props.data
   let formatedRuntime = x => `${parseInt(x / 60)}h ${x % 60}m`
 
@@ -47,7 +47,7 @@ export const MovieInfo = props => {
           <ItemValue> {vote_count}</ItemValue>
 
           <ItemHeader>Budget:</ItemHeader>
-          <ItemValue>{budget}</ItemValue>
+          <ItemValue><span role="img" aria-label="money emoji">💵</span>{budget !== undefined ? budget.toLocaleString('en-US') : budget}</ItemValue>
           <ItemHeader>Release date:</ItemHeader>
           <ItemValue>{opening}</ItemValue>
         </div>
@@ -56,7 +56,7 @@ export const MovieInfo = props => {
           <ItemValue>{vote_average}</ItemValue>
 
           <ItemHeader>Revenue:</ItemHeader>
-          <ItemValue>{revenue}</ItemValue>
+          <ItemValue><span role="img" aria-label="money emoji">💵</span>{revenue !== undefined ? revenue.toLocaleString('en-US') : revenue}</ItemValue>
           <ItemHeader>Runtime:</ItemHeader>
           <ItemValue>{formatedRuntime(runtime)}</ItemValue>
         </div>

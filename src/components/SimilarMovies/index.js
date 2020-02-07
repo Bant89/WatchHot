@@ -1,9 +1,11 @@
 import React from 'react'
+import { useHistory } from 'react-router-dom'
 import { Container, Item, Image } from './styles'
 import Slider from 'react-slick'
 import placeholder from '../../assets/placeholder.jpg'
 
 export const SimilarMovies = props => {
+  let history = useHistory()
   let settings = {
     arrows: true,
     infinite: true,
@@ -44,7 +46,7 @@ export const SimilarMovies = props => {
       <Container>
         <Slider {...settings}>
           {props.data.map(e => (
-            <Item key={e.id}>
+            <Item key={e.id} onClick={() => history.push(`/movie/${e.id}`)}>
               <Image
                 src={
                   e.poster_path
