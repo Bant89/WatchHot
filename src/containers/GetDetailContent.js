@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
@@ -13,6 +13,7 @@ import {
 } from '../actions'
 import { MovieInfo } from '../components/MovieInfo'
 import { SimilarMovies } from '../components/SimilarMovies'
+import { VideoModal } from '../components/VideoModal'
 
 export const GetDetailContent = ({ setShow }) => {
   let dispatch = useDispatch()
@@ -20,6 +21,8 @@ export const GetDetailContent = ({ setShow }) => {
   let similarData = useSelector(state => state.similarMovies.results)
   let { isLoading, error } = useSelector(state => state.movieDetail)
   let { videos } = useSelector(state => state.movieDetail)
+  const [showVideo, setShowVideo] = useState(false);
+  let [videoKey, setVideoKey] = useState('');
   let { id } = useParams()
   let SIMILAR_ENDPOINT = `/movie/${id}/similar`,
     DETAIL_ENDPOINT = `/movie/${id}`,
@@ -49,8 +52,7 @@ export const GetDetailContent = ({ setShow }) => {
       .then(
         axios.spread((details, videos) => {
           dispatch(detail_data_success(details.data, videos.data.results))
-          console.log(details.data)
-          console.log(videos.data.results)
+          setVideoKey(videos.data.results[0].key);
         })
       )
       .catch(err => {
@@ -77,12 +79,13 @@ export const GetDetailContent = ({ setShow }) => {
 
   return (
     <>
+      <VideoModal active={showVideo} setShow={setShowVideo} videoKey={videoKey}/>
       <MovieInfo
         data={movieData}
         loading={isLoading}
         error={error}
         videos={videos}
-        setShow={setShow}
+        setShow={setShowVideo}
       />
       <SimilarMovies data={similarData} />
     </>

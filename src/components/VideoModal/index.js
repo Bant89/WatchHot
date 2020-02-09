@@ -1,13 +1,14 @@
 import React from 'react'
 import { Container, Video } from './styles'
 
-export const VideoModal = (props) => {
+export const VideoModal = ({ videoKey, active, setShow }) => {
+  console.log(`videoKeys: ${videoKey}`)
+ 
   return (
-    <Container className={props.active ? 'active' : ''} onClick={() => {
-      props.setShow(false)
+    <Container className={active ? 'active' : ''} onClick={() => {
+      setShow(false)
     }}>
-      <Video src="https://www.youtube.com/embed/tgbNymZ7vqY" allowFullScreen>
-      </Video>
+      <Video allowFullScreen src={`https://www.youtube.com/embed/${videoKey}`} />
     </Container>
   )
 }

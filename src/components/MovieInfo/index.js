@@ -17,12 +17,12 @@ const getStars = value => {
   let amountFilled = Math.floor((value / 10) * 5)
   let res = []
   for (let i = 0; i < amountFilled; i++)
-    res.push(<ion-icon name="star"></ion-icon>)
+    res.push(<ion-icon name="star" key={i}></ion-icon>)
 
   if (value / amountFilled !== 0)
-    res.push(<ion-icon name="star-half"></ion-icon>)
+    res.push(<ion-icon name="star-half" key={res.length}></ion-icon>)
 
-  while (res.length < 5) res.push(<ion-icon name="star-outline"></ion-icon>)
+  while (res.length < 5) res.push(<ion-icon name="star-outline" key={res.length}></ion-icon>)
 
   return res
 }
