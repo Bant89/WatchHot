@@ -1,6 +1,6 @@
 import { CHANGE_GENRE, GET_GENRE } from '../actions'
 
-const genreReducer = (state = {  id: 28, name: 'Action', isGenre: true }, action) => {
+const genreReducer = (state = {  id: 123, name: 'popular', isGenre: false }, action) => {
   switch(action.type) {
     case CHANGE_GENRE:
       return {

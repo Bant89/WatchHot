@@ -14,7 +14,7 @@ import {
 import { MovieInfo } from '../components/MovieInfo'
 import { SimilarMovies } from '../components/SimilarMovies'
 
-export const GetDetailContent = () => {
+export const GetDetailContent = ({ setShow }) => {
   let dispatch = useDispatch()
   let movieData = useSelector(state => state.movieDetail.result)
   let similarData = useSelector(state => state.similarMovies.results)
@@ -82,6 +82,7 @@ export const GetDetailContent = () => {
         loading={isLoading}
         error={error}
         videos={videos}
+        setShow={setShow}
       />
       <SimilarMovies data={similarData} />
     </>
