@@ -1,4 +1,7 @@
 import React from 'react'
+import { useHistory } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { change_genre } from '../../actions'
 import {
   Container,
   Title,
@@ -28,6 +31,8 @@ const getStars = value => {
 }
 
 export const MovieInfo = props => {
+  let history = useHistory()
+  let dispatch = useDispatch()
   let { isLoading, error } = props
 
   if (isLoading) {
@@ -94,7 +99,10 @@ export const MovieInfo = props => {
 
         <ul style={ulStyle}>
           {genres.length > 0
-            ? genres.map((e, idx) => <Tag key={e + idx}>{e.name}</Tag>)
+            ? genres.map((e, idx) => <Tag key={e + idx} onClick={() => {
+              dispatch(change_genre({id: e.id, name: e.name, isGenre: true}))
+              history.push("/")
+            }}>{e.name}</Tag>)
             : null}
         </ul>
       </DataContainer>

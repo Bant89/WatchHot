@@ -2,7 +2,6 @@ import React from 'react'
 import { Container, Video } from './styles'
 
 export const VideoModal = ({ videoKey, active, setShow }) => {
-  console.log(`videoKeys: ${videoKey}`)
  
   return (
     <Container className={active ? 'active' : ''} onClick={() => {
