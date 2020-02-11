@@ -4,8 +4,9 @@ import axios from 'axios'
 import useDebounce from '../../hooks/useDebounce'
 import { APIKEY, BASE_URL } from '../../api/info'
 import { get_data, data_error, data_success } from '../../actions'
-const ENDPOINT = '/search/movie'
+import { Input } from './styles'
 
+const ENDPOINT = '/search/movie'
 
 function searchData(search) {
   return axios({
@@ -43,7 +44,7 @@ export const SearchBar = () => {
 
   return (
     <div>
-      <input type="text" placeholder="Enter movie..." onChange={e => setSearchTerm(e.target.value)}/>
+      <Input type="text" placeholder="Enter movie name..." onChange={e => setSearchTerm(e.target.value)}/>
     </div>
   )
 }

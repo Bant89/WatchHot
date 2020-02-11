@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const Tag = styled.li`
   display: inline;
-  background-color: lightblue;
+  background-color: #e65c5c;
   padding: 0.4em;
   border: 1px solid rgba(255, 255, 255, 0);
   border-radius: 5px;

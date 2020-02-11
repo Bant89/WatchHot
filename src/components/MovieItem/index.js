@@ -8,7 +8,6 @@ import { genres } from '../../api/info'
 
 export const MovieItem = ({movie}) => {
   let url = `/movie/${movie.id}`
-  console.log(movie)
   let curGens = []
   movie.genre_ids.forEach(id => {
     genres.forEach(e => {
@@ -29,7 +28,7 @@ export const MovieItem = ({movie}) => {
         </Link>
       </Item>
       <ItemData>
-        <h3>Rating:</h3><h3>{stars}</h3>
+        <h3>Rating:</h3><h3 style={{color: 'goldenrod'}}>{stars}</h3>
         <h3>Release date: </h3><h3>{(movie.release_date)}</h3>
         <TagList genres={curGens}/>
       </ItemData>

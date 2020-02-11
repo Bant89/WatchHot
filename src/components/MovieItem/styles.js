@@ -33,4 +33,5 @@ export const Item = styled.div`
 export const Image = styled.img`
   max-width: 200px;
   margin-bottom: 0.5em;
+  border-radius: 5px;
 `;
