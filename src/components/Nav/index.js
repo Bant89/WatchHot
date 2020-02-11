@@ -19,7 +19,11 @@ const Nav = () => {
   })
   return (
     <NavBar>
-      <NavItem>
+      <NavItem onClick={() => {
+        dispatch(change_genre({id: 123, name: 'popular', isGenre: false}))
+        dispatch(get_data())
+        goHome()
+      }}>
         <TopDiv>
           Watch Hot 
         </TopDiv>

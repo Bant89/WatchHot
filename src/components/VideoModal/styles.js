@@ -15,7 +15,7 @@ export const Container = styled.div`
   align-items: center;
   background-color: rgba(33,33,33,.33);
   display: none;
-
+  z-index: 100;
   &.active {
     display: block;
   }

@@ -45,36 +45,16 @@ export const Image = styled.img`
   height: auto;
   grid-area: image;
 `
-export const Tag = styled.li`
-  display: inline;
-  background-color: lightblue;
-  padding: 0.4em;
-  border: 1px solid rgba(255, 255, 255, 0);
-  border-radius: 5px;
-  letter-spacing: 1px;
-  font-weight: bolder;
-  margin: 6px;
-  height: 35px;
-`
-
 export const TextPlacement = styled.div`
   grid-area: text;
 `
 
-export const ulStyle = {
-  display: 'flex',
-  justifyContent: 'space-around',
-  padding: '0',
-  gridArea: 'tag'
-}
-
 export const DataContainer = styled.div`
   grid-area: data;
   display: grid;
-  align-items: stretch;
   grid-template-areas:
     'left right'
-    'tag  tag';
+    'tag tag';
 `
 
 export const ItemHeader = styled.p`

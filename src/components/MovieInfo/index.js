@@ -1,38 +1,19 @@
 import React from 'react'
-import { useHistory } from 'react-router-dom'
-import { useDispatch } from 'react-redux'
-import { change_genre } from '../../actions'
 import {
   Container,
   Title,
   Image,
-  Tag,
   TextPlacement,
-  ulStyle,
   DataContainer,
   ItemHeader,
   ItemValue,
   Button
 } from './styles'
 import placeholder from '../../assets/placeholder.jpg'
-
-const getStars = value => {
-  let amountFilled = Math.floor((value / 10) * 5)
-  let res = []
-  for (let i = 0; i < amountFilled; i++)
-    res.push(<ion-icon name="star" key={i}></ion-icon>)
-
-  if (value / amountFilled !== 0)
-    res.push(<ion-icon name="star-half" key={res.length}></ion-icon>)
-
-  while (res.length < 5) res.push(<ion-icon name="star-outline" key={res.length}></ion-icon>)
-
-  return res
-}
+import { getStars } from '../../utils'
+import { TagList } from '../TagList'
 
 export const MovieInfo = props => {
-  let history = useHistory()
-  let dispatch = useDispatch()
   let { isLoading, error } = props
 
   if (isLoading) {
@@ -97,14 +78,9 @@ export const MovieInfo = props => {
           <ItemValue>{formatedRuntime(runtime)}</ItemValue>
         </div>
 
-        <ul style={ulStyle}>
           {genres.length > 0
-            ? genres.map((e, idx) => <Tag key={e + idx} onClick={() => {
-              dispatch(change_genre({id: e.id, name: e.name, isGenre: true}))
-              history.push("/")
-            }}>{e.name}</Tag>)
+            ? <TagList genres={genres} />
             : null}
-        </ul>
       </DataContainer>
       <TextPlacement>
         <ItemHeader>Overview:</ItemHeader>
