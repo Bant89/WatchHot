@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom'
 import Nav from './components/Nav'
 import Main from './pages/Main.js'
 import MovieDetail from './pages/MovieDetail.js'
@@ -9,12 +9,13 @@ import { GlobalStyles } from './GlobalStyles'
 import { IoIosMenu, IoIosClose } from 'react-icons/io'
 
 function App() {
-  const [isOpen, setOpen] = useState(false)
+  const [isOpen, setOpen] = useState(false);
   return (
     <Router>
       <GlobalStyles />
-      <h1 className="mainTitle" onClick={() => setOpen(!isOpen)}>
-        {isOpen ? <IoIosClose /> : <IoIosMenu />} WatchHot
+      <h1 className="mainTitle">
+        {isOpen ? <IoIosClose  onClick={() => setOpen(!isOpen)}/> : <IoIosMenu  onClick={() => setOpen(!isOpen)}/>} 
+        <Link to="/" style={{textDecoration: 'none', color: 'red', marginLeft: '10px'}}>WatchHot</Link>
       </h1>
       <div className="mainContainer">
         <Nav isOpen={isOpen} />

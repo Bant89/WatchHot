@@ -8,7 +8,7 @@ const Main = () => {
   if(name === "Top_rated") name = "Top Rated"
   return (
     <div style={{textAlign: 'center', width: '100%'}}>
-      <h1>{name}</h1>
+      <h1 style={{marginBottom: '15px'}}>{name}</h1>
      <GetMainContent />
     </div>
   )

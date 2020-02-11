@@ -3,6 +3,10 @@ import styled from 'styled-components'
 export const Container = styled.div`
   display: flex;
   justify-content: center;
+  @media(max-width: 768px) {
+    margin-bottom: 20px;
+    width: 100%;
+  }
 `;
 
 export const ItemData = styled.div`
@@ -17,6 +21,9 @@ export const ItemData = styled.div`
   }
   ${Container}:hover & > * {
     display: inherit;
+  }
+  @media (max-width: 768px) {
+    display: none;
   }
 `;
 
