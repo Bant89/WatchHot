@@ -10,11 +10,14 @@ import { IoIosMenu, IoIosClose } from 'react-icons/io'
 
 function App() {
   const [isOpen, setOpen] = useState(false);
+  const iconStyle = {
+    cursor: 'pointer'
+  }
   return (
     <Router>
       <GlobalStyles />
       <h1 className="mainTitle">
-        {isOpen ? <IoIosClose  onClick={() => setOpen(!isOpen)}/> : <IoIosMenu  onClick={() => setOpen(!isOpen)}/>} 
+        {isOpen ? <IoIosClose style={iconStyle} onClick={() => setOpen(!isOpen)}/> : <IoIosMenu style={iconStyle}   onClick={() => setOpen(!isOpen)}/>} 
         <Link to="/" style={{textDecoration: 'none', color: 'red', marginLeft: '10px'}}>WatchHot</Link>
       </h1>
       <div className="mainContainer">

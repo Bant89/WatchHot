@@ -29,7 +29,6 @@ export const Container = styled.div`
       'text';
   }
   @media (max-width: 490px) {
-    margin: 0;
     padding: 0;
   }
 `
