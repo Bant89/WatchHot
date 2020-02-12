@@ -18,10 +18,11 @@ export const ItemData = styled.div`
   align-items: center;
   & > * {
     margin-bottom: 5px;
-    display: none;
+    opacity: 0;
   }
   ${Container}:hover & > * {
-    display: inherit;
+    ${fadeIn()}
+    opacity: 1;
   }
   @media (max-width: 768px) {
     display: none;

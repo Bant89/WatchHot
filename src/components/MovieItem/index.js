@@ -36,8 +36,3 @@ export const MovieItem = ({movie}) => {
   )
 }
 
-// Vote average
-// Release Date
-// Runtime 
-// tags
-
