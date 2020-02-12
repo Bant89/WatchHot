@@ -5,7 +5,7 @@ import Main from './pages/Main.js'
 import MovieDetail from './pages/MovieDetail.js'
 import UserProfile from './pages/UserProfile.js'
 import './App.css'
-import { GlobalStyles } from './GlobalStyles'
+import { GlobalStyles } from './styles/GlobalStyles.js'
 import { IoIosMenu, IoIosClose } from 'react-icons/io'
 
 function App() {

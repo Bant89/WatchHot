@@ -15,7 +15,7 @@ import { MovieInfo } from '../components/MovieInfo'
 import { SimilarMovies } from '../components/SimilarMovies'
 import { VideoModal } from '../components/VideoModal'
 
-export const GetDetailContent = ({ setShow }) => {
+export const GetDetailContent = () => {
   let dispatch = useDispatch()
   let movieData = useSelector(state => state.movieDetail.result)
   let similarData = useSelector(state => state.similarMovies.results)

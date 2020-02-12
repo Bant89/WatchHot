@@ -42,7 +42,6 @@ export const MovieInfo = props => {
         alt="hey"
       />
       <Title>{title}</Title>
-      <Button onClick={() => {props.setShow(true)}}>Watch Trailer</Button>
       <DataContainer>
         <div style={{ textAlign: 'center' }}>
           <ItemHeader>Vote count:</ItemHeader>
@@ -77,7 +76,7 @@ export const MovieInfo = props => {
           <ItemHeader>Runtime:</ItemHeader>
           <ItemValue>{formatedRuntime(runtime)}</ItemValue>
         </div>
-
+        <Button onClick={() => {props.setShow(true)}}>Watch Trailer</Button>
           {genres.length > 0
             ? <TagList genres={genres} />
             : null}

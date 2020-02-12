@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { fadeIn } from '../../styles/animation'
 
 export const Container = styled.div`
   display: flex;
@@ -28,6 +29,7 @@ export const ItemData = styled.div`
 `;
 
 export const Item = styled.div`
+  ${fadeIn()}
   max-width: 300px;
   display: flex;
   flex-direction: column;

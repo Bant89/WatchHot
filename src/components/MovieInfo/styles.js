@@ -1,14 +1,8 @@
 import styled from 'styled-components'
-
-export const MainContainer = styled.div`
-  width: 80vw;
-  background-color: #fcbe03;
-  @media (max-width: 768px) {
-    padding: 0.5em;
-  }
-`
+import { fadeIn } from '../../styles/animation'
 
 export const Container = styled.div`
+  ${fadeIn()}
   padding: 1em;
   display: grid;
   margin: 0 auto;
@@ -16,7 +10,7 @@ export const Container = styled.div`
     'title title  video'
     'image data   data'
     'text  text   text';
-  width: 50vw;
+  width: 70vw;
   height: auto;
   grid-gap: 10px;
 
@@ -34,7 +28,7 @@ export const Container = styled.div`
 `
 
 export const Title = styled.h2`
-  text-align: center;
+  text-align: left;
   font-size: 1.6em;
   grid-area: title;
 `
@@ -53,6 +47,7 @@ export const DataContainer = styled.div`
   display: grid;
   grid-template-areas:
     'left right'
+    'trailer trailer'
     'tag tag';
 `
 
@@ -68,8 +63,11 @@ export const ItemValue = styled.p`
 
 export const Button = styled.button`
   grid-area: video;
-  background-color: lightblue;
+  background-color: #e65c5c;
   font-weight: 700;
-  height: auto;
+  height: 4em;
+  margin: 0 auto;
+  width: 200px;
   border-radius: 5px;
+  grid-area: trailer;
 `;
