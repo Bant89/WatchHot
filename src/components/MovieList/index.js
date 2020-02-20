@@ -7,11 +7,13 @@ export const MovieList = ({ loading = true, items = [] }) => {
     return <h2>Loading...</h2>
   }else {
     return (
-      <List>
-        {items.map(e => {
-          return <MovieItem movie={e} key={e.id} />
-        })}
-      </List>
+      <>
+        <List>
+          {items.map(e => {
+            return <MovieItem movie={e} key={e.id} />
+          })}
+        </List>
+      </>
     )
   }
 }
