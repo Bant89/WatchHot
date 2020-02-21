@@ -23,7 +23,7 @@ export const PaginationNav = ({ setPage, page }) => {
   }
 
   let elements = items.map(e => {
-    return e === page ? <Button onClick={() => setPage(e)} active>{e}</Button> : <Button onClick={() => setPage(e)}>{e}</Button>
+    return e === page ? <Button onClick={() => setPage(e)} key={e} active>{e}</Button> : <Button onClick={() => setPage(e)} key={e}>{e}</Button>
   })
 
   return (
