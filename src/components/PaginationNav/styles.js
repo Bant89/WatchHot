@@ -9,9 +9,9 @@ export const Button = styled.button`
   margin: 0 5px;
 
   ${props => props.active && css`
-    -webkit-box-shadow: 3px 10px 5px 0px rgba(0,0,0,0.54);
-    -moz-box-shadow: 3px 10px 5px 0px rgba(0,0,0,0.54);
-     box-shadow: 3px 10px 5px 0px rgba(0,0,0,0.54);
+    -webkit-box-shadow: 3px 5px 5px 0px rgba(0,0,0,0.54);
+    -moz-box-shadow: 3px 5px 5px 0px rgba(0,0,0,0.54);
+     box-shadow: 3px 5px 5px 0px rgba(0,0,0,0.54);
      color: #cc0000;
   `}
 

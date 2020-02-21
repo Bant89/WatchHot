@@ -4,6 +4,7 @@ import axios from 'axios'
 import { get_data, data_error, data_success } from '../actions'
 import { MovieList } from '../components/MovieList'
 import { PaginationNav } from '../components/PaginationNav'
+import { Loader } from '../components/MovieList/styles'
 import { APIKEY, BASE_URL } from '../api/info'
 
 const GetMainContent = () => {
@@ -48,7 +49,7 @@ const GetMainContent = () => {
   }, [currentGenre, dispatch, page])
 
   if(isLoading)
-    return <h1>Loading</h1>
+    return <h2>Loading...</h2>
   else{
     return (
       <div>
